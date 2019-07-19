@@ -43,8 +43,27 @@ export default {
         // yield put({ type: "delStusync", id });
         //3.2 可以让 getList 重新执行
         yield put({ type: "getList" })
-    }
+    },
+    *updateStu(action,{ put }) {
+      //1. 得到要修改的学生id
+      let userId = action.id;
+      //2. 得到要修改的学生需要修改的数据
+      let userInfo = action.userInfo;
+      console.log(userId)
+      //3. ajax 修改数据库
+      let response = yield fetch(`http://localhost:3000/student/${userId}`,{
+        method: "PUT",
+        body: JSON.stringify(userInfo),
+        headers: {
+          'content-type': 'application/json',
+        },
+      })
+      let res = yield response.json();
+      console.log(res);
+      yield put({ type: "getList" });
+    },
   },
+
 
   reducers: {
     //设置list
