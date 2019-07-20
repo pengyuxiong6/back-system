@@ -22,4 +22,14 @@ export default {
       },
     }],
   ],
+  //正向代理
+  devServer: {
+    proxy: [
+      {
+        context: ['/auth','/api'],
+        target: 'http://www.lvmx.top',
+        changeOrigin: true
+      }
+    ]
+  }
 }

@@ -1,3 +1,9 @@
+/**
+ * title: 首页
+ * Routes:
+ *  - ./src/routes/PrivateRoute.js
+ *  - ./src/routes/a.js
+ */
 import styles from './index.css';
 
 

@@ -1,3 +1,8 @@
+/**
+ * title : 学生管理
+ * Routes:
+ * - ./src/routes/PrivateRoute.js
+ */
 import styles from './index.less';
 import { Table, Button, Input, Popconfirm, Modal,Form,InputNumber,Radio } from 'antd';
 import { connect } from 'dva';
